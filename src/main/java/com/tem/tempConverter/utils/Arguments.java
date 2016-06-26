@@ -1,4 +1,4 @@
-package com.tem.omg.utils;
+package com.tem.tempConverter.utils;
 
 /**
  * Created by Azet on 2015-08-02.
@@ -8,7 +8,7 @@ public class Arguments {
     private Scale convertFrom = null;
     private double value = 0.0;
 
-    public Arguments(Scale convertFrom, double value, Scale convertTo) {
+    Arguments(Scale convertFrom, double value, Scale convertTo) {
         this.convertTo = convertTo;
         this.convertFrom = convertFrom;
         this.value = value;
