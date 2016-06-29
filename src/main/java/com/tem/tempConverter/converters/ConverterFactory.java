@@ -17,7 +17,6 @@ public class ConverterFactory {
         } else if (arguments == Scale.KELVIN) {
             temperature = new ToKelvin();
         }
-
         return temperature;
     }
 }

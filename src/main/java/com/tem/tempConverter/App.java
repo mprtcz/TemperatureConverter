@@ -1,31 +1,30 @@
 package com.tem.tempConverter;
 
-import com.tem.tempConverter.Logger.ConvertersLogger;
-import com.tem.tempConverter.converters.Converter;
-import com.tem.tempConverter.converters.ConverterFactory;
-import com.tem.tempConverter.utils.ArgumentParser;
-import com.tem.tempConverter.utils.Arguments;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * Created by Azet on 2015-08-02.
  */
-public class App {
-    private final static Logger logger = Logger.getLogger(ConvertersLogger.class.getName());
-    private Level level = Level.CONFIG;
+public class App extends javafx.application.Application {
+    @Override
+    public void start(Stage window) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainMenu.fxml"));
+        System.out.println(getClass().getResource("/"));
+        Parent root = loader.load();
 
+        Scene scene = new Scene(root, 1024, 768);
 
-    public static void main(String[] args) {
-        ConvertersLogger.initializeLogger();
-
-        Arguments arguments = ArgumentParser.arguments(args);
-
-        Converter converter = ConverterFactory.getConverter(arguments.getConvertTo());
-        double result = converter.convert(arguments.getConvertFrom(), arguments.getValue());
-        System.out.println("Converting from " + arguments.getValue() + " "
-                + arguments.getConvertFrom() + " to " + arguments.getConvertTo() + ". Result: " + result);
+        window.setTitle("Temperature Converter");
+        window.setScene(scene);
+        window.show();
 
     }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
 }
