@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tem.tempConverter.Controller.Controller">
    <top>
@@ -17,29 +17,35 @@
    <left>
       <VBox>
          <children>
-            <Label text="Enter a numeric value:" />
+            <Label text="Enter a numeric value:">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin></Label>
             <TextField fx:id="enteredValueTextField" BorderPane.alignment="CENTER">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </TextField>
+            <Label text="Select scale:">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
             <ChoiceBox fx:id="scaleChoiceBox" prefWidth="150.0">
                <VBox.margin>
                   <Insets bottom="30.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </ChoiceBox>
-            <Label text="Convert to:" />
-            <Button fx:id="toCelsiusButton" mnemonicParsing="false" onAction="#onToCelsiusButtonClicked" text="Celsius">
+            <Label text="Convert to:">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin></Label>
+            <ChoiceBox fx:id="convertToChoiceBox" prefWidth="150.0">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
-            </Button>
-            <Button fx:id="toFahrenheitButton" mnemonicParsing="false" onAction="#onToFahrenheitButtonCLicked" text="Fahrenheit">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="toKelvinButton" mnemonicParsing="false" onAction="#onToKelvinButtonClicked" text="Kelvin">
+            </ChoiceBox>
+            <Button fx:id="convertButton" alignment="CENTER" mnemonicParsing="false" onAction="#onConvertButtonClicked" text="Convert">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -47,7 +53,22 @@
          </children>
       </VBox>
    </left>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
    <center>
-      <TextArea fx:id="resultsTextArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="resultsLabel" BorderPane.alignment="CENTER" />
+            <LineChart fx:id="lineChart">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </VBox>
    </center>
 </BorderPane>
