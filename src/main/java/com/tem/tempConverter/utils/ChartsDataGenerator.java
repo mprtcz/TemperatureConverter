@@ -12,9 +12,9 @@ import java.util.List;
  */
 public class ChartsDataGenerator {
 
-    Scale basicScale;
-    int basicValue;
-    int range = 50;
+    private Scale basicScale;
+    private int basicValue;
+    private int range = 50;
 
 
     public ChartsDataGenerator(Scale basicScale, int value) {
