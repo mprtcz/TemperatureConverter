@@ -60,14 +60,24 @@
       <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="resultsLabel" BorderPane.alignment="CENTER" />
-            <LineChart fx:id="lineChart">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </LineChart>
+            <VBox>
+               <children>
+                  <Label fx:id="convertToLabel" />
+                  <LineChart fx:id="lineChart" legendSide="TOP" legendVisible="false">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Label fx:id="convertFromLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" textAlignment="RIGHT" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
       </VBox>
    </center>
