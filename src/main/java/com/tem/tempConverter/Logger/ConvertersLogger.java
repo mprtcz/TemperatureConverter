@@ -1,4 +1,4 @@
-package com.tem.tempConverter.Logger;
+package com.tem.tempconverter.logger;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;

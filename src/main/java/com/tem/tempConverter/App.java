@@ -1,4 +1,4 @@
-package com.tem.tempConverter;
+package com.tem.tempconverter;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

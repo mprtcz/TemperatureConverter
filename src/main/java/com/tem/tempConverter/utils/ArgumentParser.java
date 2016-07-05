@@ -1,6 +1,6 @@
-package com.tem.tempConverter.utils;
+package com.tem.tempconverter.utils;
 
-import com.tem.tempConverter.Logger.ConvertersLogger;
+import com.tem.tempconverter.logger.ConvertersLogger;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

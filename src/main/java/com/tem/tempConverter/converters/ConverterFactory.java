@@ -1,6 +1,6 @@
-package com.tem.tempConverter.converters;
+package com.tem.tempconverter.converters;
 
-import com.tem.tempConverter.utils.Scale;
+import com.tem.tempconverter.utils.Scale;
 
 /**
  * Created by Azet on 2015-08-02.
