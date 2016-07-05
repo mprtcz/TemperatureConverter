@@ -1,9 +1,8 @@
-package com.tem.tempConverter.Controller;
+package com.tem.tempconverter.controller;
 
-import com.tem.tempConverter.converters.Converter;
-import com.tem.tempConverter.converters.ConverterFactory;
-import com.tem.tempConverter.utils.ChartsDataGenerator;
-import com.tem.tempConverter.utils.Scale;
+import com.tem.tempconverter.converters.*;
+import com.tem.tempconverter.utils.ChartsDataGenerator;
+import com.tem.tempconverter.utils.Scale;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -20,6 +19,7 @@ public class Controller {
     public ChoiceBox<Scale> convertToChoiceBox;
     public Button convertButton;
     public LineChart lineChart;
+    public Label convertFromLabel, convertToLabel;
 
 
     public void onConvertButtonClicked(){
@@ -33,8 +33,13 @@ public class Controller {
             resultsLabel.setText(value +" degrees " +scaleChoiceBox.getValue().toString().toLowerCase()
                     +" equals " +result +" degrees " +convertToChoiceBox.getValue().toString().toLowerCase());
             ChartsDataGenerator chartsDataGenerator = new ChartsDataGenerator(scaleChoiceBox.getValue(), value);
+
             lineChart.getData().clear();
             lineChart.getData().addAll(chartsDataGenerator.getChartData(convertToChoiceBox.getValue()));
+            lineChart.getData().addAll(chartsDataGenerator.getChartInitialValue(convertToChoiceBox.getValue()));
+
+            convertFromLabel.setText(scaleChoiceBox.getValue().toString());
+            convertToLabel.setText(convertToChoiceBox.getValue().toString());
 
         } catch (NumberFormatException nex) {
             enteredValueTextField.setText("Please type only numeric values");
