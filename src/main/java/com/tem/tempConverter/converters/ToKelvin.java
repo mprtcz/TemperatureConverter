@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 /**
  * Created by Azet on 2015-08-02.
  */
-public class ToKelvin implements Converter{
+class ToKelvin implements Converter{
     private final static Logger logger = Logger.getLogger(ConvertersLogger.class.getName());
     private Level level = Level.CONFIG;
 

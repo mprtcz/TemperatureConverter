@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 /**
  * Created by Azet on 2015-08-02.
  */
-public class ToFahrenheit implements Converter {
+class ToFahrenheit implements Converter {
     private final static Logger logger = Logger.getLogger(ConvertersLogger.class.getName());
     private Level level = Level.CONFIG;
 

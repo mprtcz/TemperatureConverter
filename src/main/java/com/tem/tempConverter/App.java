@@ -15,7 +15,7 @@ public class App extends javafx.application.Application {
         System.out.println(getClass().getResource("/"));
         Parent root = loader.load();
 
-        Scene scene = new Scene(root, 1024, 768);
+        Scene scene = new Scene(root, 800, 600);
 
         window.setTitle("Temperature Converter");
         window.setScene(scene);
@@ -26,5 +26,4 @@ public class App extends javafx.application.Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }
